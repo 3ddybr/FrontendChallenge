@@ -1,4 +1,5 @@
 // import { Button } from '../Button'
+import Link from 'next/link'
 
 import { PropsWithChildren } from 'react'
 import { RiArrowLeftSLine } from 'react-icons/ri';
@@ -14,7 +15,9 @@ export function Header ({text, hasButton= false, children}:PropsWithChildren<Hea
     <Container>
       <Content>
         <div>
-          {hasButton && <button><RiArrowLeftSLine/></button>}
+          {/* <Link href="/" passHref> */}
+            {hasButton && <button><RiArrowLeftSLine/></button>}
+          {/* </Link> */}
           <h1>{text}</h1>  
         </div>
         {children}      

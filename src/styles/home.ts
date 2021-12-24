@@ -14,7 +14,7 @@ max-width:1140px;
 /* border: 1px solid blue; */
 `;
 
-export const Search = styled.div`
+export const Search = styled.div` 
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -37,5 +37,9 @@ export const Search = styled.div`
   svg{
     font-size:1.6rem;
     margin-right: 1.6rem;
+  }
+
+  @media (max-width: 680px){
+    margin-bottom: 3.2rem;
   }
 `;

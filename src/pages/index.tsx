@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 
 import { RiSearch2Line } from 'react-icons/ri';
 import { Button } from '../components/Button';
@@ -13,8 +14,14 @@ const Home: NextPage = () => {
     <Container>
       
       <Header text="Empreendimentos" >
-        <Button text="Adicionar +"/>
+        <Link href="/empreendimentonovo"
+        passHref>
+          <Button text="Adicionar +">
+            {/* <Link href="/empreendimento-novo"/> */}
+          </Button>
+        </Link>        
       </Header>
+
       <Search>
         <RiSearch2Line/>
         <input type="text" placeholder="Buscar" />

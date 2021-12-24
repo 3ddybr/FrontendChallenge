@@ -13,7 +13,6 @@ export const Container = styled.div`
   max-width:1140px;
   background: var(--bg-white);
 
-  /* border:1px solid red;  */
 `;
 
 export const Top = styled.div`
@@ -62,7 +61,14 @@ export const Top = styled.div`
   }
 
   @media (max-width: 680px) {
-    background: black;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    div{
+      p{
+        margin-top: 1rem
+      }
+    }
   }
 `;
 
@@ -78,6 +84,4 @@ export const Content = styled.div`
   padding-top:1.6rem ;
 
   width: 100%;
-
-
 `;

@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.header`
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+export const Container = styled.header`  
     width: 100vw;
     background:var(--bg-white);
 `;
@@ -48,5 +45,11 @@ export const Content = styled.div`
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
 
+    }
+
+    @media (max-width: 680px){
+        h1{
+            font-size: 1.8rem;
+        }
     }
 `;

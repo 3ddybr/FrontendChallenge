@@ -20,5 +20,11 @@ export const ButtonLayout = styled.button`
     &:hover {
         filter: brightness(0.9);
     }
-  
+
+
+    @media (max-width: 680px){
+        font-size: 1.2rem;
+
+        padding: 1rem 2.2rem;
+    }
 `
