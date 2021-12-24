@@ -1,12 +1,38 @@
 import type { NextPage } from 'next'
-import styles from '../styles/home.module.css'
+
+import { RiSearch2Line } from 'react-icons/ri';
+import { Button } from '../components/Button';
+
+
+import { CardEmpreendimento } from '../components/CardEmpreendimento'
+import { Header } from '../components/Header';
+import { Container, Search } from '../styles/home'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <Container>
       
-    </div>
+      <Header text="Empreendimentos" >
+        <Button text="Adicionar +"/>
+      </Header>
+      <Search>
+        <RiSearch2Line/>
+        <input type="text" placeholder="Buscar" />
+      </Search>
+
+      <CardEmpreendimento />
+      <CardEmpreendimento />
+      <CardEmpreendimento />
+      <CardEmpreendimento />
+      <CardEmpreendimento />
+
+      <Button text="Carregar mais" />
+
+
+    </Container>
   )
 }
 
 export default Home
+
+// hasButton textButton='Adicionar +'
