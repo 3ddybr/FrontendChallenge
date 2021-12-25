@@ -58,7 +58,7 @@ const Home: NextPage = () => {
         <input type="text" placeholder="Buscar" />
       </Search>
 
-      {empreend.map((empreend) =>{
+      {empreend?.map((empreend) =>{
         return(
           <CardEmpreendimento key={empreend._id} name={empreend.name} status={empreend.status} purpose={empreend.purpose} address={empreend.address} />
         )
