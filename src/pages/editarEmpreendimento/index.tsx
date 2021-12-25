@@ -3,7 +3,7 @@ import FormularioEmpreendimentos from "../../components/FormularioEmprendimentos
 import { Header } from "../../components/Header";
 import { Container } from "./styles";
 
-export default function Empreendimentonovo() {
+export default function EditarEmpreendimento() {
   // const { register, handleSubmit, setValue } = useForm();
   // const onRegister = ({ nome, datadeNascimento, cpf, cep, logradouro, bairro, uf })
 

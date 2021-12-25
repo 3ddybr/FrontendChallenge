@@ -52,5 +52,5 @@ export const Formulario = styled.form`
   }
 
   
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `

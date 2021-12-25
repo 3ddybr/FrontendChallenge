@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle `
 }
 
 :root{
-  --background: #E5E5E5;
+  --background: #F8F7FC;
   --brandcolor-primary-default: #4F46BB;
   --brandcolor-primary-light: #8E85ff;
   --textcolor-primary: #302E45;
