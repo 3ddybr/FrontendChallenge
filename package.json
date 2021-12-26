@@ -6,14 +6,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server enterprises-server.json -w --port 3001"
+    "server": "json-server --id _id enterprises-server.json -w --port 3001"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.5",
     "axios": "^0.24.0",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "styled-components": "^5.3.3"
+    "react-hook-form": "^7.22.5",
+    "styled-components": "^5.3.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "17.0.4",

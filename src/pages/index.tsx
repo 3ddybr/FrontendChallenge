@@ -1,7 +1,5 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
-import {api} from '../services/api';
 
 import { Button } from '../components/Button';
 import { CardEmpreendimento } from '../components/CardEmpreendimento'
@@ -9,40 +7,56 @@ import { Header } from '../components/Header';
 import { Container, Search } from '../styles/home'
 
 import { RiSearch2Line } from 'react-icons/ri';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useEmpreendimento } from '../contexts/Empreendimento';
+import { api } from '../services/api';
 
-interface DataProps{
+export interface Address {
+  district: string;
+  city: string;
+  street: string;
+  state: string;
+  number: string;
+  cep: string;
+}
+
+export interface EnterpriseItensProps{
   _id: string;
   name: string;
   status: string;
   purpose: string;
-  address: {
-    district: string;
-    city: string;
-    street: string;
-    number: string;
-  }
+  ri_number: string;
+  address: Address;
 }
 
 
-const Home: NextPage = () => {
-  const [empreend, setEmpreend] = useState<DataProps[]>([]);
+const Home: NextPage = ({enterprises}:any) => {
+  const [data, setData] = useState<EnterpriseItensProps[]>(enterprises) 
 
-  useEffect(() => {
-    api.get('/enterprises').then((res) => {
-      setEmpreend(res.data);
-      // console.log(res.data);
-    })
-  }, [])
+  // const {getEnterprises, enterprises} = useEmpreendimento()
 
+  // useEffect(()=>{
+  //   getEnterprises()
+  // },[getEnterprises])
+  // console.log("Console do enterprises", enterprises)
   //Solucao para bug do next/link
   // eslint-disable-next-line react/display-name
-  const  ButtonNext  =  React.forwardRef ( ( { children , ... rest  } ,  ref )  =>  ( 
+  const  ButtonNext  =  React.forwardRef ( ( { children , ... rest  }, ref  )  =>  ( 
     <span  > 
       <Button  text="Adicionar +" {...rest} > { children } </Button> 
     </span> 
   ) ) ;
   //Fim Solucao para bug do next/link
+  const handleDeleteEnterprise = useCallback(async (_id: string) =>{
+    try{
+      if(window.confirm("Deseja realmente excluir?")){
+        await api.delete(`/enterprises/${_id}`)
+        setData(prevState => prevState.filter(enterprise => enterprise._id !== _id))
+      }
+    }catch(err){
+      console.log(err)
+    }
+    },[])
 
   return (
     <Container>      
@@ -58,9 +72,9 @@ const Home: NextPage = () => {
         <input type="text" placeholder="Buscar" />
       </Search>
 
-      {empreend?.map((empreend) =>{
+      {data.map((empreend:EnterpriseItensProps) =>{
         return(
-          <CardEmpreendimento key={empreend._id} name={empreend.name} status={empreend.status} purpose={empreend.purpose} address={empreend.address} />
+          <CardEmpreendimento onDelete={handleDeleteEnterprise} key={empreend._id} item={empreend}  />
         )
       })}
       <Button text="Carregar mais" />
@@ -68,6 +82,13 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export const getStaticProps:GetStaticProps = async () => {
+  const responseEnterprise = await api.get("/enterprises")
 
-// hasButton textButton='Adicionar +'
+  return {
+    props: {
+      enterprises: responseEnterprise.data
+    }
+  }
+}
+export default Home;

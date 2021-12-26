@@ -1,17 +1,29 @@
-import { Button } from "../../components/Button";
-import FormularioEmpreendimentos from "../../components/FormularioEmprendimentos";
+import {FormularioEmpreendimentos} from "../../components/FormularioEmpreendimentos";
 import { Header } from "../../components/Header";
 import { Container } from "./styles";
 
-export default function CadastrarEmpreendimento() {
-  // const { register, handleSubmit, setValue } = useForm();
-  // const onRegister = ({ nome, datadeNascimento, cpf, cep, logradouro, bairro, uf })
+export default function CadastrarEmpreendimento() { 
+  const initialData = {  
+    _id: "",
+    name: "",
+    status: "",
+    purpose: "",
+    ri_number: "",
+    address: {
+      district: "",
+      city: "",
+      street: "",
+      state: "",
+      number: "",
+      cep: "",
+    } 
+  }
 
   return (
     <Container>
       <Header hasButton text="Cadastro de empreendimento"/>
-      <FormularioEmpreendimentos/> 
-      <Button text="Cadastrar"/>
+      <FormularioEmpreendimentos initialData={initialData} /> 
+      {/* <Button  text="Cadastrar" /> */}
     </Container>
   );
 }
