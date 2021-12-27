@@ -107,9 +107,7 @@ export function FormularioEmpreendimentos ({initialData}:PropsForm) {
           <option value="IN_WORKS">Em obras</option>
           <option value="READY_TO_MOVE_IN">Pronto pra morar</option>
         </select>
-
-        {/* <input value={`String(Math.random()`} {...register("ri_number")}/> */}
-
+        
         <input id="name" {...register("name")} placeholder="Nome do empreendimento"/>
         <p>{errors.name?.message}</p>
 
@@ -134,6 +132,7 @@ export function FormularioEmpreendimentos ({initialData}:PropsForm) {
 
         <input id="number" {...register("address.number")} placeholder="Número"/>
         <p>{errors.address?.number?.message}</p>
+        
       <Button type="submit" text={initialData?._id ? "Editar" : "Cadastrar"}/>
     </Formulario>
 

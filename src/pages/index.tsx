@@ -61,16 +61,7 @@ const Home: NextPage = ({enterprises}:any) => {
       console.log(err)
     }
     },[])
-
     
-    // const filteredEnterprises = enterprises.filter((enterprises: { name: string; }) => {
-    //     if (enterprises.name.toLowerCase().includes(enterprises.name.toLowerCase()) === search.toLowerCase().includes(search.toLowerCase()))      
-    //   return 
-
-    // })   
-    
-    
-
   return (
     <Container>      
       <Header text="Empreendimentos" >

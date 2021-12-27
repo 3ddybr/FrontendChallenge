@@ -63,10 +63,18 @@ export const Top = styled.div`
   @media (max-width: 680px) {
     display: grid;
     grid-template-columns: 1fr;
-
     div{
       p{
+        /* padding: 0.4rem 1.2rem; */
         margin-top: 1rem
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    div{
+      p{
+        padding: 0.4rem 1.2rem;
       }
     }
   }
