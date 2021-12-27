@@ -44,6 +44,81 @@
         "state": "SP",
         "cep": "60000000"
       }
+    },
+    {
+      "_id": "sNQwLNW",
+      "ri_number": "12121215",
+      "name": "Vila Aconchego",
+      "status": "IN_WORKS",
+      "purpose": "HOME",
+      "address": {
+        "district": "Zumbi",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Manoel Domingues",
+        "state": "ES",
+        "number": "64",
+        "cep": "29302230"
+      }
+    },
+    {
+      "_id": "9lwscI7",
+      "ri_number": "3232311",
+      "name": "Hiper Hill",
+      "status": "RELEASE",
+      "purpose": "HOME",
+      "address": {
+        "district": "Otton Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Escadaria Francisco Sanches da Costa",
+        "state": "ES",
+        "number": "987",
+        "cep": "29301813"
+      }
+    },
+    {
+      "_id": "5r1RyqC",
+      "name": "COnjunto teste",
+      "status": "SHORT_RELEASE",
+      "purpose": "COMMERCIAL",
+      "ri_number": "8774555",
+      "address": {
+        "district": "Otton Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Escadaria Francisco Sanches da Costa",
+        "state": "ES",
+        "number": "33445",
+        "cep": "29301813"
+      }
+    },
+    {
+      "_id": "aBo-9DH",
+      "name": "Paradise Cristal",
+      "status": "SHORT_RELEASE",
+      "purpose": "HOME",
+      "ri_number": "545454545",
+      "address": {
+        "district": "Otton Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Escadaria Francisco Sanches da Costa",
+        "state": "ES",
+        "number": "9999",
+        "cep": "29301813"
+      }
+    },
+    {
+      "_id": "qAZ9iEX",
+      "ri_number": "2515151515",
+      "name": "Carone Enterprises",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "address": {
+        "district": "Otton Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Escadaria Francisco Sanches da Costa",
+        "state": "ES",
+        "number": "10000",
+        "cep": "29301813"
+      }
     }
   ]
 }

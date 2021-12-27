@@ -7,8 +7,7 @@ import { Header } from '../components/Header';
 import { Container, Search } from '../styles/home'
 
 import { RiSearch2Line } from 'react-icons/ri';
-import React, { useCallback, useEffect, useState } from 'react';
-import { useEmpreendimento } from '../contexts/Empreendimento';
+import React, { useCallback, useState } from 'react';
 import { api } from '../services/api';
 
 export interface Address {
@@ -33,13 +32,6 @@ export interface EnterpriseItensProps{
 const Home: NextPage = ({enterprises}:any) => {
   const [data, setData] = useState<EnterpriseItensProps[]>(enterprises) 
 
-  // const {getEnterprises, enterprises} = useEmpreendimento()
-
-  // useEffect(()=>{
-  //   getEnterprises()
-  // },[getEnterprises])
-  // console.log("Console do enterprises", enterprises)
-  //Solucao para bug do next/link
   // eslint-disable-next-line react/display-name
   const  ButtonNext  =  React.forwardRef ( ( { children , ... rest  }, ref  )  =>  ( 
     <span  > 
@@ -84,7 +76,6 @@ const Home: NextPage = ({enterprises}:any) => {
 
 export const getStaticProps:GetStaticProps = async () => {
   const responseEnterprise = await api.get("/enterprises")
-
   return {
     props: {
       enterprises: responseEnterprise.data

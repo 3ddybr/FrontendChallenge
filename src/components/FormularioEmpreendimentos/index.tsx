@@ -1,4 +1,3 @@
-import {Formulario} from "./styles";
 
 import {useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -7,8 +6,9 @@ import { apiCep } from "../../services/apiCep";
 import { Button } from "../Button";
 import {useRouter } from "next/router";
 import { api } from "../../services/api";
-import { useCallback, useEffect } from "react";
+import { useCallback} from "react";
 
+import {Formulario} from "./styles";
 interface CepProps {
   bairro: string;
   cep: string;
@@ -21,25 +21,22 @@ interface CepProps {
   siafi: string;
   uf: string;
 }
-
 interface Address {
   district: string;
   city: string;
   street: string;
-  state?: string;
+  state: string;
   number: string;
-  cep?: string;
+  cep: string;
 }
-
 interface FormularioProps{
-  _id?: string;
+  _id: string;
   name: string;
   status: string;
   purpose: string;
-  ri_number?: string;
+  ri_number: string;
   address: Address;
 }
-
 interface PropsForm{
   initialData?: FormularioProps;
 }
@@ -47,7 +44,8 @@ interface PropsForm{
 const schema = yup.object().shape({  
   name: yup.string().required('Nome é obrigatório'),
   status: yup.string().required('Situação é obrigatório'),
-  purpose: yup.string().required('Tipo de locação é obrigatório'),  
+  purpose: yup.string().required('Tipo de locação é obrigatório'),
+  // ri_number: yup.string().required('Número do RI é obrigatório'),
   address: yup.object().shape({
     district: yup.string().required('Bairro é obrigatório'),
     city: yup.string().required('Cidade é obrigatório'),
@@ -60,54 +58,41 @@ const schema = yup.object().shape({
 
 
 export function FormularioEmpreendimentos ({initialData}:PropsForm) {
-  // const {createNewEmpreendimento} = useEmpreendimento();
   const {register, handleSubmit, control, formState:{errors} , setValue} =useForm({
     resolver: yupResolver(schema),
     defaultValues: initialData
   })
-
-
-  // console.log("console do inicial data", initialData)
   const router= useRouter()
-  
-  // useEffect(() => {
-  //   setValue('name', initialData.name)
-  // } , [initialData, setValue])
-
 
   const handleCreateNewEmpreendimento = useCallback( async (data: FormularioProps) =>{
     try{
-      // console.log("console do data na ficnao", data)
       if(data?._id){
         await api.put(`/enterprises/${data._id}`, data)
         console.log('tem id', data)
       }else{
         const createData = {
-          _id: String(Math.random()),
-          ri_number:String(Math.random()),
-          ...data
+          ...data,
+          ri_number: String(Math.random()),
         }
         await api.post('/enterprises', createData)
+        console.log('não tem id', data)
       }
       router.push("/")      
     }catch(err){
       console.log('Erro do post ',err)
     }    
-  }, [router]) 
+  }, [router])
 
   const handleFetchAddress = async (cepUser: string) => {    
     if (cepUser.length === 8) {
       const res = await apiCep.get<CepProps>(`${cepUser}/json/`);
-      const {logradouro, bairro, localidade, uf}:CepProps = res.data
-      setValue('address.district', res.data.bairro); //bairro
-      setValue('address.city', res.data.localidade); //cidade
+      const retorno:CepProps = res.data
+      setValue('address.district', res.data.bairro);
+      setValue('address.city', res.data.localidade); 
       setValue('address.street', res.data.logradouro);
       setValue('address.state', res.data.uf);
-
-    //  console.log(res.data);
     }
   }
-
   const onChangeCep = (cepUser:string) => {
     handleFetchAddress(cepUser);
   }
@@ -122,6 +107,8 @@ export function FormularioEmpreendimentos ({initialData}:PropsForm) {
           <option value="IN_WORKS">Em obras</option>
           <option value="READY_TO_MOVE_IN">Pronto pra morar</option>
         </select>
+
+        {/* <input value={`String(Math.random()`} {...register("ri_number")}/> */}
 
         <input id="name" {...register("name")} placeholder="Nome do empreendimento"/>
         <p>{errors.name?.message}</p>

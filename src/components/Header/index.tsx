@@ -1,5 +1,4 @@
-// import { Button } from '../Button'
-import Link from 'next/link'
+import Link from 'next/link';
 import React from 'react';
 
 import { PropsWithChildren } from 'react'
@@ -8,33 +7,20 @@ import { Container , Content} from './styles'
 interface HeaderProps { 
   text: string
   hasButton?: boolean
-  // textButton?:string
 }
 
-  //Solucao para bug do next/link
-  // eslint-disable-next-line react/display-name
-// const  ButtonNext  =  React.forwardRef ( ( { children , ... rest  } ,  ref )  =>  ( 
-//   <span> 
-//     <button {...rest} > { children } <RiArrowLeftSLine/></button> 
-//   </span> 
-// ) ) ;
-//Fim Solucao para bug do next/link
-
-export function Header ({text, hasButton= false, children}:PropsWithChildren<HeaderProps>) {   
+export function Header ({text, hasButton= false, children}:PropsWithChildren<HeaderProps>) {     
   return (
     <Container>
       <Content>
-        <div>
-          {/* <Link href="/" passHref> */}
-            {hasButton && <a><RiArrowLeftSLine/></a>}
-          {/* </Link> */}
+        <div>          
+            {hasButton && <Link href="/" passHref><RiArrowLeftSLine/></Link>}
+            <a>
+            </a>
           <h1>{text}</h1>  
         </div>
         {children}      
-        {/* {hasButton && <Button text={textButton} />} */}
       </Content>
     </Container>
   )
 }
-
-// , hasButton = false,textButton ="", ...rest

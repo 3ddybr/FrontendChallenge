@@ -21,9 +21,11 @@ export default function CadastrarEmpreendimento() {
 
   return (
     <Container>
-      <Header hasButton text="Cadastro de empreendimento"/>
+      <Header 
+      hasButton 
+      text="Cadastro de empreendimento"
+      />
       <FormularioEmpreendimentos initialData={initialData} /> 
-      {/* <Button  text="Cadastrar" /> */}
     </Container>
   );
 }

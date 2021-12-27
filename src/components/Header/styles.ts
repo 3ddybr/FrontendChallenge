@@ -22,25 +22,20 @@ export const Content = styled.div`
         align-items: center;
         justify-content: space-between;
         
-        a{
+        /* button{
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--bg-white);
             border: none;
             margin-right: 1rem;
-            margin: 0;
+            margin: 0; */
             svg{
                 font-size:3rem;
                 color: var(--brandcolor-primary-light);
-      }
-        }
+            }
+        /* } */
     }
-    
-    /* border: 1px solid red; */
-        /* button:nth-child(2){
-            margin-left: 1rem;
-        } */
 
     h1{
         font-size: 2.4rem;

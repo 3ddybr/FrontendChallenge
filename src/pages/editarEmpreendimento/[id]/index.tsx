@@ -29,9 +29,6 @@ export const getServerSideProps:GetServerSideProps = async ({req, params}) => {
           permanent: false
         }
       }
-      // console.log(err)
-    }
-  // console.log("console.log do id", id)
-  
+    }  
 }
 
