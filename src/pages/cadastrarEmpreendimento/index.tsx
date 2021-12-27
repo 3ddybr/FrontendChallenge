@@ -1,6 +1,6 @@
 import {FormularioEmpreendimentos} from "../../components/FormularioEmpreendimentos";
 import { Header } from "../../components/Header";
-import { Container } from "./styles";
+import Container  from "./styles";
 
 export default function CadastrarEmpreendimento() { 
   const initialData = {  

@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import {FormularioEmpreendimentos} from "../../../components/FormularioEmpreendimentos";
 import { Header } from "../../../components/Header";
 import { api } from "../../../services/api";
-import { Container } from "./styles";
+import Container  from "./styles";
 
 export default function EditarEmpreendimento({initialData}:any) {
   

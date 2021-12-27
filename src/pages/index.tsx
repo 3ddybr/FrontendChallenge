@@ -7,7 +7,7 @@ import { Header } from '../components/Header';
 import { Container, Search } from '../styles/home'
 
 import { RiSearch2Line } from 'react-icons/ri';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { api } from '../services/api';
 
 export interface Address {
@@ -30,12 +30,24 @@ export interface EnterpriseItensProps{
 
 
 const Home: NextPage = ({enterprises}:any) => {
-  const [data, setData] = useState<EnterpriseItensProps[]>(enterprises) 
+  const [data, setData] = useState<EnterpriseItensProps[]>(enterprises)
+  const [searchData, setSearchData] = useState<EnterpriseItensProps[]>(enterprises)
+  const [search, setSearch] = useState('')
+  // console.log(search, data)
+
+  useEffect(() => {
+    if(search !== ""){
+      const dadosFilter =  data.filter((data)=> ! data.name.search(search))
+      setSearchData(dadosFilter)
+    }else{
+      setSearchData(data)
+    }
+  } , [search, data])
 
   // eslint-disable-next-line react/display-name
   const  ButtonNext  =  React.forwardRef ( ( { children , ... rest  }, ref  )  =>  ( 
     <span  > 
-      <Button  text="Adicionar +" {...rest} > { children } </Button> 
+      <Button text="Adicionar +" {...rest} > { children } </Button> 
     </span> 
   ) ) ;
   //Fim Solucao para bug do next/link
@@ -50,6 +62,15 @@ const Home: NextPage = ({enterprises}:any) => {
     }
     },[])
 
+    
+    // const filteredEnterprises = enterprises.filter((enterprises: { name: string; }) => {
+    //     if (enterprises.name.toLowerCase().includes(enterprises.name.toLowerCase()) === search.toLowerCase().includes(search.toLowerCase()))      
+    //   return 
+
+    // })   
+    
+    
+
   return (
     <Container>      
       <Header text="Empreendimentos" >
@@ -61,10 +82,10 @@ const Home: NextPage = ({enterprises}:any) => {
 
       <Search>
         <RiSearch2Line/>
-        <input type="text" placeholder="Buscar" />
+        <input type="text" placeholder="Buscar" value={search} onChange={(ev) => setSearch(ev.target.value)}/>
       </Search>
 
-      {data.map((empreend:EnterpriseItensProps) =>{
+      {searchData.map((empreend:EnterpriseItensProps) =>{
         return(
           <CardEmpreendimento onDelete={handleDeleteEnterprise} key={empreend._id} item={empreend}  />
         )
