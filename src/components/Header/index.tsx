@@ -14,9 +14,7 @@ export function Header ({text, hasButton= false, children}:PropsWithChildren<Hea
     <Container>
       <Content>
         <div>          
-            {hasButton && <Link href="/" passHref><RiArrowLeftSLine/></Link>}
-            <a>
-            </a>
+            {hasButton && <Link href="/" passHref><RiArrowLeftSLine/></Link>}           
           <h1>{text}</h1>  
         </div>
         {children}      
