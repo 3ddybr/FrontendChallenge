@@ -119,6 +119,201 @@
         "number": "10000",
         "cep": "29301813"
       }
+    },
+    {
+      "_id": "IyO3BNt",
+      "name": "Condominip Esmeralda",
+      "status": "SHORT_RELEASE",
+      "purpose": "HOME",
+      "ri_number": "0.829260698670135",
+      "address": {
+        "district": "Zumbi",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Manoel Domingues",
+        "state": "ES",
+        "number": "2021",
+        "cep": "29302230"
+      }
+    },
+    {
+      "_id": "ICw43FW",
+      "name": "Condomínio Ville Ágata",
+      "status": "IN_WORKS",
+      "purpose": "HOME",
+      "ri_number": "0.1255055687292188",
+      "address": {
+        "district": "São Francisco de Assis",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Valdemar Stanzani",
+        "state": "ES",
+        "number": "15",
+        "cep": "29317431"
+      }
+    },
+    {
+      "_id": "OWR9eGA",
+      "name": "Residencial Morada Campestre",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.6030164734212069",
+      "address": {
+        "district": "Santo Antônio",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Marechal Mascarenhas de Moraes",
+        "state": "ES",
+        "number": "986",
+        "cep": "29300530"
+      }
+    },
+    {
+      "_id": "gkcm1w0",
+      "name": "Condomínio Residencial Club Beira Rio",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.8237698124510136",
+      "address": {
+        "district": "Centro",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Avenida Beira Rio",
+        "state": "ES",
+        "number": "1100",
+        "cep": "29300205"
+      }
+    },
+    {
+      "_id": "2OWj9MU",
+      "name": "Condomínio do Edifício Montreal",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.04785711067719989",
+      "address": {
+        "district": "Guandu",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Cep correto mais nao cadastrado",
+        "state": "Es",
+        "number": "963",
+        "cep": "29300782"
+      }
+    },
+    {
+      "_id": "TABt9QU",
+      "name": "Condomínio Residencial Flamboyant",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.6700412237204199",
+      "address": {
+        "district": "Estelita Coelho Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Avenida Jones dos Santos Neves",
+        "state": "ES",
+        "number": "585",
+        "cep": "29301662"
+      }
+    },
+    {
+      "_id": "LB7NTgv",
+      "name": "Condomínio do Shopping Sul",
+      "status": "RELEASE",
+      "purpose": "COMMERCIAL",
+      "ri_number": "0.3230098825687886",
+      "address": {
+        "district": "Doutor Gilberto Machado",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Avenida Francisco Lacerda de Aguiar",
+        "state": "ES",
+        "number": "841",
+        "cep": "29303300"
+      }
+    },
+    {
+      "_id": "b_iTjgk",
+      "name": "Condomínio Residencial Edifício Bougainville",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.9453365487880145",
+      "address": {
+        "district": "Recanto",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Anízio Laureano da Silva",
+        "state": "ES",
+        "number": "985",
+        "cep": "29303195"
+      }
+    },
+    {
+      "_id": "zYaBwy1",
+      "name": "Condomínio do Edifício Itapuã Bloco Residencial",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "COMMERCIAL",
+      "ri_number": "0.398218582426606",
+      "address": {
+        "district": "Centro",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Coronel Francisco Braga",
+        "state": "ES",
+        "number": "717",
+        "cep": "29300220"
+      }
+    },
+    {
+      "_id": "aXzrc2K",
+      "name": "Condominio Residencial Vereza",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.14685329852932383",
+      "address": {
+        "district": "Recanto",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Basílio Pimenta",
+        "state": "ES",
+        "number": "1815",
+        "cep": "29303000"
+      }
+    },
+    {
+      "_id": "3GXp7U-",
+      "name": "Condomínio do Edifício Noblesse",
+      "status": "IN_WORKS",
+      "purpose": "HOME",
+      "ri_number": "0.22574022709345876",
+      "address": {
+        "district": "Centro",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Basílio Pimenta",
+        "state": "ES",
+        "number": "256",
+        "cep": "29300300"
+      }
+    },
+    {
+      "_id": "uKS14cO",
+      "name": "Condomínio do Edifício Residencial Acácias",
+      "status": "READY_TO_MOVE_IN",
+      "purpose": "HOME",
+      "ri_number": "0.8205043308322892",
+      "address": {
+        "district": "Otton Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Escadaria Francisco Sanches da Costa",
+        "state": "ES",
+        "number": "963",
+        "cep": "29301813"
+      }
+    },
+    {
+      "_id": "_yNPyB5",
+      "name": "Condomínio do Edifício Athenas",
+      "status": "IN_WORKS",
+      "purpose": "HOME",
+      "ri_number": "0.9954924787754276",
+      "address": {
+        "district": "Paraíso",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Pedro Américo",
+        "state": "ES",
+        "number": "6354",
+        "cep": "29304100"
+      }
     }
   ]
 }

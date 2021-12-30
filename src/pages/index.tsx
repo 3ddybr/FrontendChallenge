@@ -33,7 +33,15 @@ const Home: NextPage = ({enterprises}:any) => {
   const [data, setData] = useState<EnterpriseItensProps[]>(enterprises)
   const [searchData, setSearchData] = useState<EnterpriseItensProps[]>(enterprises)
   const [search, setSearch] = useState('')
-  // console.log(search, data)
+
+  const [page, setPage] = useState(1);  //qual pagina estou
+  const [enterprisePerPages, setEnterprisePerPages] = useState(10);
+
+  useEffect(() => {
+    setPage(enterprisePerPages)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } ,[])
 
   useEffect(() => {
     if(search !== ""){
@@ -61,6 +69,16 @@ const Home: NextPage = ({enterprises}:any) => {
       console.log(err)
     }
     },[])
+
+    const indexOfLastPost = enterprisePerPages;
+    // const indexOfFirstPost = enterprisePerPages
+    const indexOfFirstPost = indexOfLastPost - enterprisePerPages;
+    const currentPosts = searchData.slice(indexOfFirstPost, indexOfLastPost);
+    // console.log(indexOfLastPost)
+
+    function handlePagination(){
+      setEnterprisePerPages(enterprisePerPages + page);
+    }  
     
   return (
     <Container>      
@@ -76,12 +94,12 @@ const Home: NextPage = ({enterprises}:any) => {
         <input type="text" placeholder="Buscar" value={search} onChange={(ev) => setSearch(ev.target.value)}/>
       </Search>
 
-      {searchData.map((empreend:EnterpriseItensProps) =>{
+      {currentPosts.map((empreend:EnterpriseItensProps) =>{
         return(
-          <CardEmpreendimento onDelete={handleDeleteEnterprise} key={empreend._id} item={empreend}  />
+          <CardEmpreendimento onDelete={handleDeleteEnterprise} key={empreend._id} item={empreend} />
         )
       })}
-      <Button text="Carregar mais" />
+      <Button onClick={handlePagination} text="Carregar mais" />
     </Container>
   )
 }

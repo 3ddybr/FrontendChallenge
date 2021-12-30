@@ -54,7 +54,7 @@ estará rodando em http://localhost:3001/
 ✔️ Utilizar o getServerSideProps
 ✔️ utilizar o axios
 ✔️ Filtrar pelo nome do empreendimento.
-❎ Paginação.
+✔️ Paginação para 10 itens.
 
 
 ## Imagens

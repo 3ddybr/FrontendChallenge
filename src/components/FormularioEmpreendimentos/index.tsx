@@ -68,14 +68,12 @@ export function FormularioEmpreendimentos ({initialData}:PropsForm) {
     try{
       if(data?._id){
         await api.put(`/enterprises/${data._id}`, data)
-        console.log('tem id', data)
       }else{
         const createData = {
           ...data,
           ri_number: String(Math.random()),
         }
         await api.post('/enterprises', createData)
-        console.log('não tem id', data)
       }
       router.push("/")      
     }catch(err){
