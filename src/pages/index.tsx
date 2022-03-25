@@ -32,7 +32,7 @@ export interface EnterpriseItensProps{
 const Home: NextPage = ({enterprises}:any) => {
   const [data, setData] = useState<EnterpriseItensProps[]>(enterprises)
   const [searchData, setSearchData] = useState<EnterpriseItensProps[]>(enterprises)
-  const [search, setSearch] = useState('')
+  const [handleSearch, setHandleSearch] = useState('')
 
   const [page, setPage] = useState(1);  //qual pagina estou
   const [enterprisePerPages, setEnterprisePerPages] = useState(10);
@@ -45,17 +45,16 @@ const Home: NextPage = ({enterprises}:any) => {
   } ,[])
 
   useEffect(() => {
-    // const searchConvert = search.toLowerCase()
-    // setSearch(searchConvert)
-
-
-    if(search !== ""){
-      const dadosFilter =  data.filter((data)=> ! data.name.toLowerCase().search(search.toLowerCase()))
+      if(handleSearch !== ""){
+      const dadosFilter = data.filter((data)=> {
+        const responseFilter= data.name.toLowerCase().search(handleSearch.toLowerCase())
+        return responseFilter !== -1 
+      })
       setSearchData(dadosFilter)
     }else{
       setSearchData(data)
     }
-  } , [search, data])
+  } , [handleSearch, data])
 
   // eslint-disable-next-line react/display-name
   const  ButtonNext  =  React.forwardRef ( ( { children , ... rest  }, ref  )  =>  ( 
@@ -94,7 +93,7 @@ const Home: NextPage = ({enterprises}:any) => {
 
       <Search>
         <RiSearch2Line/>
-        <input type="text" placeholder="Buscar" value={search} onChange={(ev) => setSearch(ev.target.value)}/>
+        <input type="text" placeholder="Buscar" value={handleSearch} onChange={(ev) => setHandleSearch(ev.target.value)}/>
       </Search>
 
       {currentPosts.map((empreend:EnterpriseItensProps) =>{
