@@ -79,7 +79,14 @@ const Home: NextPage = ({enterprises}:any) => {
     const currentPosts = searchData.slice(indexOfFirstPost, indexOfLastPost);
 
     function handlePagination(){
+      if(enterprisePerPages > data.length){
+        alert("Todos os empreendimentos foram exibidos")
+      }else{
       setEnterprisePerPages(enterprisePerPages + page);
+      console.log(enterprisePerPages)
+
+      console.log(data.length)
+      }
     }  
     
   return (
