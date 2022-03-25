@@ -83,9 +83,6 @@ const Home: NextPage = ({enterprises}:any) => {
         alert("Todos os empreendimentos foram exibidos")
       }else{
       setEnterprisePerPages(enterprisePerPages + page);
-      console.log(enterprisePerPages)
-
-      console.log(data.length)
       }
     }  
     

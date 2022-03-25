@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { RiDeleteBin7Line, RiEditLine } from 'react-icons/ri';
 import { Container, Top, Content } from './styles'
 
@@ -21,8 +22,20 @@ interface CardEmpreendimentoProps {
   onDelete: (_id:string) => Promise<void>;
 }
 
+interface PurposeProps{
+  HOME: "Residencial";
+  COMMERCIAL: "Comercial";
+}
+
 export function CardEmpreendimento({item , onDelete}:CardEmpreendimentoProps) {   
   const { _id, name, status, purpose, address} = item;
+
+  const purposeDisplay = purpose === "HOME" ? "Residencial" : "Comercial";
+  const statusDisplay = 
+    status === "SHORT_RELEASE" ? "Breve lançamento" : 
+    status === "LONG_RELEASE" ? "Lançamento" :
+    status === "IN_WORKS" ? "Em obras" : "Pronto pra morar" ;
+  
   return (
     <Container>      
       <Top>
@@ -37,8 +50,8 @@ export function CardEmpreendimento({item , onDelete}:CardEmpreendimentoProps) {
           </div>
         </div>
         <div>
-          <p>{status}</p>  
-          <p>{purpose}</p>
+          <p>{statusDisplay}</p>          
+          <p>{purposeDisplay}</p>
         </div>
       </Top>
 
@@ -48,4 +61,3 @@ export function CardEmpreendimento({item , onDelete}:CardEmpreendimentoProps) {
     </Container>
   )
 }
-
