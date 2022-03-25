@@ -37,6 +37,7 @@ const Home: NextPage = ({enterprises}:any) => {
   const [page, setPage] = useState(1);  //qual pagina estou
   const [enterprisePerPages, setEnterprisePerPages] = useState(10);
 
+  
   useEffect(() => {
     setPage(enterprisePerPages)
 
@@ -44,8 +45,12 @@ const Home: NextPage = ({enterprises}:any) => {
   } ,[])
 
   useEffect(() => {
+    // const searchConvert = search.toLowerCase()
+    // setSearch(searchConvert)
+
+
     if(search !== ""){
-      const dadosFilter =  data.filter((data)=> ! data.name.search(search))
+      const dadosFilter =  data.filter((data)=> ! data.name.toLowerCase().search(search.toLowerCase()))
       setSearchData(dadosFilter)
     }else{
       setSearchData(data)
@@ -71,10 +76,8 @@ const Home: NextPage = ({enterprises}:any) => {
     },[])
 
     const indexOfLastPost = enterprisePerPages;
-    // const indexOfFirstPost = enterprisePerPages
     const indexOfFirstPost = indexOfLastPost - enterprisePerPages;
     const currentPosts = searchData.slice(indexOfFirstPost, indexOfLastPost);
-    // console.log(indexOfLastPost)
 
     function handlePagination(){
       setEnterprisePerPages(enterprisePerPages + page);

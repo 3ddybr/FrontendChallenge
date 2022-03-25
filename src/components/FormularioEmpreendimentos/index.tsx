@@ -114,7 +114,7 @@ export function FormularioEmpreendimentos ({initialData}:PropsForm) {
           <option value="COMMERCIAL">Comercial</option>
         </select>
 
-        <input id="cep" {...register("address.cep")}placeholder="Cep"
+        <input id="cep" type="number" {...register("address.cep")}placeholder="Cep (somente números)"
           onChange={(e) => onChangeCep(e.target.value)}
         />
         <p>{errors.address?.cep?.message}</p>

@@ -311,8 +311,23 @@
         "city": "Cachoeiro de Itapemirim",
         "street": "Rua Pedro Américo",
         "state": "ES",
-        "number": "6354",
+        "number": "635",
         "cep": "29304100"
+      }
+    },
+    {
+      "_id": "bEvUnbg",
+      "name": "Novo Empreendimeto teste",
+      "status": "SHORT_RELEASE",
+      "purpose": "HOME",
+      "ri_number": "0.7046054450806254",
+      "address": {
+        "district": "Otton Marins",
+        "city": "Cachoeiro de Itapemirim",
+        "street": "Rua Nelson Borelli",
+        "state": "ES",
+        "number": "79",
+        "cep": "29301822"
       }
     }
   ]
